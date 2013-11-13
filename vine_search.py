@@ -23,3 +23,6 @@ def search_tweets(query):
 
     except TwitterSearchException as e:
         return "No results"
+
+def get_vines():
+    return search_tweets('vine.co')
