@@ -10,11 +10,11 @@ def search_tweets(query):
         tso.setIncludeEntities(False)
 
         ts = TwitterSearch(
-            consumer_key = consumer_key,
-            consumer_secret = consumer_secret,
-            access_token = access_token,
-            access_token_secret = access_token_secret
-         )
+                consumer_key = consumer_key,
+                consumer_secret = consumer_secret,
+                access_token = access_token,
+                access_token_secret = access_token_secret
+                )
 
         tweets = []
         for tweet in ts.searchTweetsIterable(tso):
@@ -26,3 +26,30 @@ def search_tweets(query):
 
 def get_vines():
     return search_tweets('vine.co')
+
+#Write a python function that returns a dictionary of vine urls relating to the tweets containing them
+def get_vineURLS(tweets):
+    vines = {}
+    for string in tweets:
+        for word  in string.split(" "):
+            if "vine.co" in word:
+                vines[word] = string
+                print word + vines[word]
+
+    return vines
+
+get_vineURLS(get_vines())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
