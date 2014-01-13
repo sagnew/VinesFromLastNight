@@ -1,5 +1,7 @@
-from constants import *
 from TwitterSearch import *
+
+from constants import *
+
 
 def search_tweets(query):
     try:
@@ -39,17 +41,3 @@ def get_vineURLS(tweets):
     return vines
 
 get_vineURLS(get_vines())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
